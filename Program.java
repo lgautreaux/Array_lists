@@ -26,21 +26,45 @@ public class Program {
         arrList.add(4);
         // arrList.addAll(arrList1);
 
-        MyArrayList myFirstList = new MyArrayList();
+        MyArrayList<Integer> myFirstList = new MyArrayList<Integer>();
         myFirstList.AddEnd(3);
         myFirstList.AddEnd(7);
         myFirstList.AddEnd(1);
-        myFirstList.Print();
+        //myFirstList.Print();
         myFirstList.AddStart(2);
-        myFirstList.Print();
+        //myFirstList.Print();
         myFirstList.AddAtIndex(300, 2);
-        myFirstList.Print();
+        //myFirstList.Print();
         myFirstList.AddAtIndex(800, -1);
-        myFirstList.Print();
+        //myFirstList.Print();
         myFirstList.AddAtIndex(900, 100);
         myFirstList.Print();
 
-        System.out.println(myFirstList.GetElementAtIndex(1));
+        try{
+        myFirstList.DeleteAtIndex(3);
+        myFirstList.Print();
+        } catch (Exception exception){
+            System.out.println(exception);
+        }
+        System.out.println("is list Clear?");
+        System.out.println(myFirstList.IsEmpty());
+        System.out.print("What is the size? ");
+        System.out.println(myFirstList.Size());
+
+        myFirstList.ClearAll();
+        System.out.println("Clear List Complete");
+        myFirstList.Print();
+        System.out.println(myFirstList.IsEmpty());
+        
+        //System.out.println(myFirstList.GetElementAtIndex(1));
+
+        MyArrayList<String> mySecondList = new MyArrayList<String>();
+        mySecondList.AddStart("Hi");
+        mySecondList.AddEnd("Everyone");
+        mySecondList.Print();
+        mySecondList.ClearAll();
+        mySecondList.Size();
+        mySecondList.Print();
     }
     
 }
