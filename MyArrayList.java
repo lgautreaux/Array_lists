@@ -76,44 +76,45 @@ public class MyArrayList<T> {
         for (int i = 0; i < size; i++) {
             System.out.print(elements[i] + " ");
         }
-        
+
         System.out.println();
     }
 
     public void DeleteAtStart() {
-        DeleteAtIndex(size-1);
+        DeleteAtIndex(0);
     }
 
-    public void DeleteAtEnd(){
-        DeleteAtEnd();
+    public void DeleteAtEnd() {
+        DeleteAtIndex(size - 1);
     }
+    
 
-    public void DeleteAtIndex(int IndexToDelete) {
-        if (IndexToDelete < 0 || IndexToDelete >= size) {
-            throw new IndexOutOfBoundsException("Index" + IndexToDelete + "is invalid for ArrayList of size" + size);
+    public void DeleteAtIndex(int indexOfValueToDelete) {
+        if (indexOfValueToDelete < 0 || indexOfValueToDelete >= size) {
+            throw new IndexOutOfBoundsException(
+                    "Index " + indexOfValueToDelete + "is invalid for ArrayList of size " + size);
         }
-        for(int i = IndexToDelete; i < size; i++){
-            elements[i] = elements[i +1];
 
+        for (int i = indexOfValueToDelete; i < size; i++) {
+            elements[i] = elements[i + 1];
         }
         size--;
-
-        
     }
+    
     public void ClearAll() {
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             elements[i] = null;
         }
         size = 0;
-
     }
 
-    public boolean IsEmpty () {
+    public boolean IsEmpty() {
         return size == 0;
-
     }
 
     public int Size() {
         return size;
     }
+
+
 }
